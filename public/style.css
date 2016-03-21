@@ -1,0 +1,23 @@
+.tile {
+	width: 100%;
+/*	display: inline-block;
+*/
+}
+.tileview li {
+	list-style-type: none;
+	width: 150px;
+	display: inline-block;
+	border: 1px solid #000;
+	margin: 15px;
+}
+.groupColumn {
+	display: inline-block;
+	width: 15%;
+	height: 100%;
+	top: 0;
+}
+.groupColumn li{
+	list-style-type: none;
+	border: 1px solid #000;
+	margin: 5px;
+}

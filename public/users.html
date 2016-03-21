@@ -1,0 +1,39 @@
+<div id="users">
+	<div class="bar">
+		<a ng-class="{active: layout == 'group'}" ng-click="layout = 'group'">По группам</a>
+		<a ng-class="{active: layout == 'list'}" ng-click="layout = 'list'">Списком</a>
+		<a ng-class="{active: layout == 'tile'}" ng-click="layout = 'tile'">Плиткой</a>
+	</div>
+	<div ng-show="layout == 'group'" class="groupview">
+		<ul class="groupColumn" ng-repeat="i in getGroupsCount(groupsCount) track by $index">
+			<li ng-repeat="u in users | group:$index">
+				<minitile></minitile>
+			</li>
+		</ul>
+	</div>
+	<ul ng-show="layout == 'tile'" class="tileview">
+			<li ng-repeat="u in users">
+			<tile></tile>
+		</li>
+	</ul>
+	<div ng-show="layout == 'list'" class="listview">
+		<!-- A compact view smaller photos and titles -->
+		<table>
+			<tr>
+				<th>Имя</th>
+				<th>Login</th>
+				<th>E-mail</th>
+				<th>Группа</th>
+				<th>Телефон</th>
+			</tr>
+			<tr ng-repeat="u in users">
+				<td>{{u.full_name}}</td>
+				<td>{{u.nickname}}</td>
+				<td>{{u.email}}</td>
+				<td>{{u.group}}</td>
+				<td>{{u.phone}}</td>
+			</tr>
+		</table>
+	</div>
+	{{message}}
+</div>

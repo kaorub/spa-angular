@@ -1,0 +1,25 @@
+{
+  "name": "spa-kaspersky",
+  "private": true,
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "^1.5.2",
+    "angular-filter": "^0.5.8",
+    "angular-resource": "^1.5.2",
+    "angular-route": "^1.5.2",
+    "express": "^4.13.4",
+    "requirejs": "^2.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kaorub/spa-kaspersky.git"
+  },
+  "scripts": {
+    "prestart": "npm install",
+    "pretest": "npm install",
+    "test": "node node_modules/karma/bin/karma start test/karma.conf.js",
+    "test-single-run": "node node_modules/karma/bin/karma start test/karma.conf.js  --single-run",
+    "tsc": "npm tsc",
+    "tsc:w": "npm tsc -w"
+  }
+}
