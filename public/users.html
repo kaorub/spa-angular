@@ -6,7 +6,8 @@
 	</div>
 	<div ng-show="layout == 'group'" class="groupview">
 		<ul class="groupColumn" ng-repeat="i in getGroupsCount(groupsCount) track by $index">
-			<li ng-repeat="u in users | group:$index">
+			<li ng-repeat="u in users | groupping:$index">
+			<!-- <li ng-repeat="u in users"> -->
 				<minitile></minitile>
 			</li>
 		</ul>
@@ -17,7 +18,6 @@
 		</li>
 	</ul>
 	<div ng-show="layout == 'list'" class="listview">
-		<!-- A compact view smaller photos and titles -->
 		<table>
 			<tr>
 				<th>Имя</th>
