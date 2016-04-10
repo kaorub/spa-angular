@@ -1,4 +1,4 @@
-# spa-kaspersky
+# spa-angular
 npm install
 
 nodemon server.js
