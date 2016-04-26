@@ -1,9 +1,26 @@
 <div id="users">
-	<div class="bar">
+	<!-- Single button -->
+	<!-- Single button -->
+	<div class="btn-group">
+	  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    View <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu">
+		<li><a ng-class="{active: layout == 'group'}" ng-click="layout = 'group'">По группам</li>
+		<li><a ng-class="{active: layout == 'list'}" ng-click="layout = 'list'">Списком</a></li>
+		<li><a ng-class="{active: layout == 'tile'}" ng-click="layout = 'tile'">Плиткой</a></li>
+	  </ul>
+	</div>
+<!-- 	  <option><a ng-class="{active: layout == 'group'}" ng-click="layout = 'group'">По группам</li></option>
+	  <option><a ng-class="{active: layout == 'list'}" ng-click="layout = 'list'">Списком</a></option>
+	  <option><a ng-class="{active: layout == 'tile'}" ng-click="layout = 'tile'">Плиткой</a></option>
+	</select> -->
+
+<!-- 	<div class="bar">
 		<a ng-class="{active: layout == 'group'}" ng-click="layout = 'group'">По группам</a>
 		<a ng-class="{active: layout == 'list'}" ng-click="layout = 'list'">Списком</a>
 		<a ng-class="{active: layout == 'tile'}" ng-click="layout = 'tile'">Плиткой</a>
-	</div>
+	</div> -->
 	<div ng-show="layout == 'group'" class="groupview">
 		<ul class="groupColumn" ng-repeat="i in getGroupsCount(groupsCount) track by $index">
 			<li ng-repeat="u in users | groupping:$index">
@@ -17,7 +34,7 @@
 			<tile></tile>
 		</li>
 	</ul>
-	<div ng-show="layout == 'list'" class="listview">
+<!-- 	<div ng-show="layout == 'list'" class="listview">
 		<table>
 			<tr>
 				<th>Имя</th>
@@ -34,6 +51,14 @@
 				<td>{{u.phone}}</td>
 			</tr>
 		</table>
-	</div>
-	{{message}}
+	</div> -->
+	<table ng-show="layout == 'list'" class="listview table table-striped table-hover">
+		<tr ng-repeat="u in users">
+			<td>{{u.full_name}}</td>
+			<td>{{u.nickname}}</td>
+			<td>{{u.email}}</td>
+			<td>{{u.group}}</td>
+			<td>{{u.phone}}</td>
+		</tr>
+	</table>
 </div>

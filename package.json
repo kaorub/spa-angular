@@ -21,5 +21,11 @@
     "test-single-run": "node node_modules/karma/bin/karma start test/karma.conf.js  --single-run",
     "tsc": "npm tsc",
     "tsc:w": "npm tsc -w"
+  },
+  "devDependencies": {
+    "karma": "~0.10",
+    "karma-mocha": "~0.0.1",
+    "karma-growl-reporter": "~0.0.1",
+    "karma-firefox-launcher": "~0.0.1"
   }
 }
