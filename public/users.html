@@ -1,58 +1,30 @@
 <div id="users">
-	<!-- Single button -->
-	<!-- Single button -->
-	<div class="btn-group">
-	  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	    View <span class="caret"></span>
-	  </button>
-	  <ul class="dropdown-menu">
-		<li><a ng-class="{active: layout == 'group'}" ng-click="layout = 'group'">По группам</li>
-		<li><a ng-class="{active: layout == 'list'}" ng-click="layout = 'list'">Списком</a></li>
-		<li><a ng-class="{active: layout == 'tile'}" ng-click="layout = 'tile'">Плиткой</a></li>
-	  </ul>
-	</div>
-<!-- 	  <option><a ng-class="{active: layout == 'group'}" ng-click="layout = 'group'">По группам</li></option>
-	  <option><a ng-class="{active: layout == 'list'}" ng-click="layout = 'list'">Списком</a></option>
-	  <option><a ng-class="{active: layout == 'tile'}" ng-click="layout = 'tile'">Плиткой</a></option>
-	</select> -->
+	<label for="singleSelect"> Choose view: </label><br>
+	<select name="layout" ng-model="selectedView" class="form-control" ng-options="item.name for item in items track by item.layout">
+	</select>
 
-<!-- 	<div class="bar">
-		<a ng-class="{active: layout == 'group'}" ng-click="layout = 'group'">По группам</a>
-		<a ng-class="{active: layout == 'list'}" ng-click="layout = 'list'">Списком</a>
-		<a ng-class="{active: layout == 'tile'}" ng-click="layout = 'tile'">Плиткой</a>
-	</div> -->
-	<div ng-show="layout == 'group'" class="groupview">
-		<ul class="groupColumn" ng-repeat="i in getGroupsCount(groupsCount) track by $index">
-			<li ng-repeat="u in users | groupping:$index">
-			<!-- <li ng-repeat="u in users"> -->
-				<minitile></minitile>
-			</li>
-		</ul>
+	<div ng-show="selectedView.layout == 'group'" class="groupview">
+		<div class="group-column-div">
+			<ul class="groupColumn col-md-2" ng-repeat="i in getGroupsCount(groupsCount) track by $index">
+				Group: {{$index + 1}}
+				<li ng-repeat="u in users | groupping:$index+1">
+					<minitile></minitile>
+				</li>
+			</ul>
+<!-- 			<ul class="groupColumn col-md-2">
+				Without group
+				<li ng-repeat="u in users | groupping:'unknown'">
+					<minitile></minitile>
+				</li>
+			</ul> -->
+		</div>
 	</div>
-	<ul ng-show="layout == 'tile'" class="tileview">
-			<li ng-repeat="u in users">
+	<ul ng-show="selectedView.layout == 'tile'" class="tileview">
+		<li ng-repeat="u in users">
 			<tile></tile>
 		</li>
 	</ul>
-<!-- 	<div ng-show="layout == 'list'" class="listview">
-		<table>
-			<tr>
-				<th>Имя</th>
-				<th>Login</th>
-				<th>E-mail</th>
-				<th>Группа</th>
-				<th>Телефон</th>
-			</tr>
-			<tr ng-repeat="u in users">
-				<td>{{u.full_name}}</td>
-				<td>{{u.nickname}}</td>
-				<td>{{u.email}}</td>
-				<td>{{u.group}}</td>
-				<td>{{u.phone}}</td>
-			</tr>
-		</table>
-	</div> -->
-	<table ng-show="layout == 'list'" class="listview table table-striped table-hover">
+	<table ng-show="selectedView.layout == 'list'" class="listview table table-striped table-hover">
 		<tr ng-repeat="u in users">
 			<td>{{u.full_name}}</td>
 			<td>{{u.nickname}}</td>

@@ -1,4 +1,5 @@
-/*global require*/
+// main.js
+// Set config
 'use strict';
 
 require.config({
@@ -26,10 +27,3 @@ require.config({
 require( ["app", 'services/services', 'filters/filters', 'controllers/controllers', 'directives/directives'], function(app) {
 	app.init();
 });
-
-// TODO:
-// 1. transfer angular routing in separate module
-// 2. add comments
-// 3. write tests
-// 4. delete console.logs
-// 5. change view

@@ -1,9 +1,7 @@
-'use strict';
-
-define(['angular', 'ngRoute'], function(angular, ngRoute) {
+// routes.js
+define(['angular'], function(angular, app) {
 	'use strict';
-	console.log('routes');
-    var app = angular.module('app', ['ngRoute']);
+    // var app = angular.module('app');
 	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider.
 			when('/home', {

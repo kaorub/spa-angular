@@ -1,6 +1,6 @@
-console.log('directives.js');
+// directives.js
 define(['angular'], function(angular) {  
 	'use strict';
-	console.log('directives loaded');
-	return angular.module('app.directives', []);
+	
+	return angular.module('directives', []);
 });

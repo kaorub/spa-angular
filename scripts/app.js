@@ -1,5 +1,4 @@
 /*global require*/
-'use strict';
 
 define('app', [
   'angular',
@@ -8,11 +7,12 @@ define('app', [
   'directives/index',
   'controllers/index',
   'ngRoute',
-  // 'routes',
-  'ngResource',
+  'ngResource'
   ], function (angular, services, filters, directives, ctrls, ngRoute, ngResource) {
+    'use strict';
+
     var app = angular
-    .module('app', ['app.services', 'app.filters', 'app.directives', 'app.controllers', 'ngRoute', 'ngResource'])
+    .module('app', ['services', 'filters', 'directives', 'controllers', 'ngRoute', 'ngResource'])
     .config(function($routeProvider) {
       $routeProvider.
         when('/home', {
@@ -25,8 +25,9 @@ define('app', [
         })
     });
     app.init = function() {
-      console.log('app inited');
-      angular.bootstrap(document, ['app']);
+      angular.element(document).ready(function () {
+        angular.bootstrap(document, ['app']);
+      })
     };
     return app;
 });

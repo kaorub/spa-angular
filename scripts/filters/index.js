@@ -1,5 +1,4 @@
 define([
-	'./groupping'
+	'./group'
 ], function() {
-	console.log('filter index');
 });

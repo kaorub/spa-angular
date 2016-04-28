@@ -1,9 +1,12 @@
-'use strict';
+// mainCtrl.js
+// Controller to navigate between pages
 
-define(['angular', 'angular-route'], function(angular) {  
-	return ['$scope', '$route', '$routeParams', '$location', function($scope, $route, $routeParams, $location) {
-	     $scope.$route = $route;
-	     $scope.$location = $location;
-	     $scope.$routeParams = $routeParams;
-	}]
+define(['./controllers'], function(controllers) {  
+	'use strict';
+
+	controllers.controller('MainCtrl', ['$scope', function ($scope) {
+		$scope.activeButton = function() {
+			$scope.isActive = !$scope.isActive;
+		} 
+	}]);
 });

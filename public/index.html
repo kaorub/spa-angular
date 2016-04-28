@@ -2,32 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Google Company</title>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <title>X Company</title>
+  <!-- Bootstrap for views -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body ng-app="app">
   <div>
-    <ul class="nav nav-tabs">
-      <li role="presentation" class="active" data-toggle="tab"><a href="#">Home</a></li>
-      <li role="presentation" data-toggle="tab"><a href="#users">Users</a></li>
+    <ul class="nav nav-tabs" ng-controller="MainCtrl">
+      <li role="presentation" data-toggle="tab" ng-class="{'active': isActive}" ng-click="activeButton()"><a href="#home">Home</a></li>
+      <li role="presentation" data-toggle="tab" ng-class="{'active': isActive}" ng-click="activeButton()"><a href="#users">Users</a></li>
     </ul>
-<!--     <ul class="nav">
-      <li class="active" data-toggle="tab"><a href="#home">Home</a></li>
-      <li data-toggle="tab"><a href="#users">Users</a></li> 
-    </ul>
-  </div> -->
-<!--   <div ng-view ng-controller="MainCtrl"></div>
- -->  
+  </div>  
   <div ng-view></div>
-
- <nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="container">
-      ...
-    </div>
-  </nav>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script src="/node_modules/requirejs/require.js" data-main="scripts/main.js"></script>
 </body>
 </html>

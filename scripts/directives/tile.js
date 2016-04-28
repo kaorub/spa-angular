@@ -1,16 +1,17 @@
-'use strict';
-
+// tile.js
+// <tile> element to show tiles view
 define([
 	'./directives'
 ], function (directives) {
+	'use strict';
+
 	directives
 		.directive('tile', function () {
 			return {
 				scope: true,
 				restrict: 'E',
 				replace: 'true',
-				template: '<div class="tile"><b>{{u.full_name}}</b><img></img><p>{{u.group}}</p><p>{{u.phone}}</p></div>'
-				// templateUrl: '/tale.html'
+				templateUrl: '/tile.html'
 			};
 		});
 });
