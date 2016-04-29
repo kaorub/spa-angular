@@ -14,18 +14,6 @@
     "url": "git://github.com/kaorub/spa-angular.git"
   },
   "scripts": {
-    "prestart": "npm install",
-    "pretest": "npm install",
-    "test": "node node_modules/karma/bin/karma start tests/karma.conf.js",
-    "test-single-run": "node node_modules/karma/bin/karma start test/karma.conf.js  --single-run",
-    "tsc": "npm tsc",
-    "tsc:w": "npm tsc -w"
-  },
-  "devDependencies": {
-    "karma": "~0.10",
-    "karma-firefox-launcher": "~0.0.1",
-    "karma-growl-reporter": "~0.0.1",
-    "karma-jasmine": "^0.3.8",
-    "karma-mocha": "~0.0.1"
+    "prestart": "npm install"
   }
 }
