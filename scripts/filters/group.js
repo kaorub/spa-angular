@@ -1,3 +1,5 @@
+// group.js
+// Set group filter
 define(['./filters'], function (filters) {
 	'use strict';
 	filters

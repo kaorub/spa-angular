@@ -1,5 +1,5 @@
 /*global require*/
-
+// Set app dependencies
 define('app', [
   'angular',
   'services/index',

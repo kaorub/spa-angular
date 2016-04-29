@@ -9,7 +9,7 @@ define(['./controllers'], function(controllers) {
 	    Users.query(function(data) {
 	    	$scope.users = data;
 	    });
-
+ 
 	    // Set the storage for view layouts
 	    $scope.items = [
 	    	{

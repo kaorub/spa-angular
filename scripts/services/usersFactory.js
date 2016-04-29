@@ -1,4 +1,5 @@
 // usersFactory.js
+// Get users factory
 define(['./services'], function(services) {
 	'use strict';
 	
